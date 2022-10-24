@@ -1,0 +1,32 @@
+<div class="mb-3">
+    <div class="d-flex py-2">
+        <label for="topic" class="form-label">Topics</label>
+        <button type="button" class="btn btn-sm btn-success ms-5" onclick="addTopic()">add new topic</button>
+    </div>
+    <div class="topics-section">
+        <div class="d-flex mb-2">
+            <input type="text" class="form-control" id="topic" name="topics[]" placeholder="course topic">
+            <button type="button" class="btn btn-danger rounded-full ms-2 delete-btn" >X</button>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    function addTopic(){
+        let topic = `   <div class="d-flex mb-2">
+                            <input type="text" class="form-control" id="topic" name="topics[]" placeholder="course topic">
+                            <button type="button" class="btn btn-danger rounded-full ms-2 delete-btn" >X</button>
+                            
+                        </div>`;
+
+        $('.topics-section').append(topic);
+    }
+
+   
+
+
+    $(document).on("click",".delete-btn",function(){
+    $(this).parent().remove();
+});
+
+</script>
