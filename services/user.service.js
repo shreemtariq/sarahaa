@@ -5,13 +5,13 @@ const { sendEmail } = require('../email/user.email');
 
 module.exports.signUp = async (req,res)=>{
     
-     const {name,email,password,age} =req.body;
+     const {first_name,last_name,email,password,age} =req.body;
      const user =await userModel.findOne({email});
      if(user){
         res.json({message:'email already exists'});
      }else {
         bcrypt.hash(password, 4, async (err, hash)=>{
-            await userModel.insertMany({name,email,password:hash,age});
+            await userModel.insertMany({first_name,last_name,email,password:hash,age});
             let token = jwt.sign({email},'nowtest');
             sendEmail({email,token,message:'hello'});
         res.json({message:'success'});
