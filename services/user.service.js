@@ -25,7 +25,7 @@ module.exports.signIn = async ( req,res)=>{
     if(user){
         const match = await bcrypt.compare(password, user.password);
         if(match){
-            let token = jwt.sign({userId:user._id,name:user.name,emailConfirm:user.emailConfirm},
+            let token = jwt.sign({userId:user._id,name:user.first_name,emailConfirm:user.emailConfirm},
                 'knowledge@@123NodeSaraha');
 
             if(user.emailConfirm==true){
