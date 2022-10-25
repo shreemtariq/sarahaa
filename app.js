@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
-
+res.set('Access-Control-Allow-Origin', '*');
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());
