@@ -12,6 +12,6 @@ app.use('/messages',require('./api/message.api'));
 app.get('/',(req,res)=>{
     res.json("ok");
 })
-mongoose.connect("mongodb+srv://tariq:Tariq55@cluster0.n51mawe.mongodb.net/saraha");
+mongoose.connect("mongodb+srv://tariq:Tariq@@55cluster0.n51mawe.mongodb.net/saraha");
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
