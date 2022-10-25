@@ -2,7 +2,8 @@ const userModel = require('../models/user.model');
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 const { sendEmail } = require('../email/user.email');
-
+var cors = require('cors');
+app.use(cors());
 module.exports.signUp = async (req,res)=>{
     
      const {first_name,last_name,email,password,age} =req.body;
